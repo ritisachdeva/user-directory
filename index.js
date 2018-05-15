@@ -1,8 +1,32 @@
 const button = document.querySelector('button.greeting')
 const head = document.querySelector('h1')
 const head2 = document.querySelector('#header')
-function changeText() {
-    head2.textContent = 'Clickity click'
-}
+const submit = document.querySelector('#submitName')
 
-button.addEventListener('click', changeText)
+const form= document.querySelector('#userForm')
+
+const handleSubmit = function(ev){
+    ev.preventDefault()
+    const heading = document.querySelector('h1')
+    const f = ev.target
+    const userName = f.userName.value
+    heading.textContent = userName
+}
+form.addEventListener('submit', handleSubmit )
+
+
+
+//function changeText() {
+ // head2.textContent = 'Clickity click'
+//}
+
+//const sub = document.forms[0].elements[0].value
+
+// function submitButton() {
+//     const sub = document.getElementById('submitName').innerHTML
+
+//     head2.textContent = sub
+// }
+
+//button.addEventListener('click', changeText)
+//button.addEventListener('click', submitButton)
