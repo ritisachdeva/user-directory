@@ -1,8 +1,3 @@
-const button = document.querySelector('button.greeting')
-const head = document.querySelector('h1')
-const head2 = document.querySelector('#header')
-const submit = document.querySelector('#submitName')
-
 const form= document.querySelector('form#userForm')
 
 const handleSubmit = function(ev){
@@ -12,7 +7,6 @@ const handleSubmit = function(ev){
     const userName = f.userName.value
     const age = f.age.value
     const favoriteColor = f.favoriteColor.value
-
 
 
     const nameItem = document.createElement('li')
@@ -43,19 +37,12 @@ const handleSubmit = function(ev){
 }
 form.addEventListener('submit', handleSubmit )
 
+function renderColor(){
+    const renderDiv = document.createElement('div')
+
+    colorItem.appendChild(renderDiv)
+}
 
 
-//function changeText() {
- // head2.textContent = 'Clickity click'
-//}
 
-//const sub = document.forms[0].elements[0].value
 
-// function submitButton() {
-//     const sub = document.getElementById('submitName').innerHTML
-
-//     head2.textContent = sub
-// }
-
-//button.addEventListener('click', changeText)
-//button.addEventListener('click', submitButton)
