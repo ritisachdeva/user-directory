@@ -13,7 +13,7 @@ const handleSubmit = function(ev){
     const age = f.age.value
     users.innerHTML += '<p>' + userName + ', ' + age + '</p>'
 
-    f.userName.value = ''
+    f.reset()
 }
 form.addEventListener('submit', handleSubmit )
 
