@@ -3,7 +3,7 @@ const head = document.querySelector('h1')
 const head2 = document.querySelector('#header')
 const submit = document.querySelector('#submitName')
 
-const form= document.querySelector('#userForm')
+const form= document.querySelector('form#userForm')
 
 const handleSubmit = function(ev){
     ev.preventDefault()
@@ -21,10 +21,19 @@ const handleSubmit = function(ev){
     const ageItem = document.createElement('li')
     ageItem.textContent = `Age: ${age}`
 
-    
+    const colorItem = document.createElement('li')
+    colorItem.textContent = 'Favorite Color: '
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorItem.appendChild(colorDiv)
+
     const list = document.createElement('ul')
     list.appendChild(nameItem)
     list.appendChild(ageItem)
+    list.appendChild(colorItem)
 
     users.appendChild(list)
 
