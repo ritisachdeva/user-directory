@@ -27,10 +27,9 @@ function renderListItem(list){
     colorItem.textContent = 'Favorite Color:'
     colorItem.style.font = "italic 18px century gothic"
     
-
+    colorItem.appendChild(renderColor())
     list.appendChild(nameItem)
     list.appendChild(ageItem)
-    colorItem.appendChild(renderColor())
     list.appendChild(colorItem)
 
     users.appendChild(list)
@@ -44,8 +43,9 @@ function renderList() {
 
 const handleSubmit = function(ev){
     ev.preventDefault()
+   
 
-    const userName = form.userName.value
+    const userName = form.userName.values
     const age = form.age.value
     const favoriteColor = form.favoriteColor.value
     const users = document.querySelector('#users')

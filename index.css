@@ -1,3 +1,8 @@
 body{
     font-family: century gothic;
 }
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
