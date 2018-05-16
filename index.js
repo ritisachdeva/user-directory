@@ -17,12 +17,16 @@ function renderListItem(list){
 
     const nameItem = document.createElement('li')
     nameItem.textContent = `Name: ${userName}`
+    nameItem.style.font = "italic 18px century gothic"
 
     const ageItem = document.createElement('li')
     ageItem.textContent = `Age: ${age}`
+    ageItem.style.font = "italic 18px century gothic"
 
     const colorItem = document.createElement('li')
-    colorItem.textContent = 'Favorite Color: '
+    colorItem.textContent = 'Favorite Color:'
+    colorItem.style.font = "italic 18px century gothic"
+    
 
     list.appendChild(nameItem)
     list.appendChild(ageItem)
