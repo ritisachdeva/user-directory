@@ -1,13 +1,19 @@
 const form= document.querySelector('form#userForm')
 
-const handleSubmit = function(ev){
-    ev.preventDefault()
-    const users = document.querySelector('#users')
-    const f = ev.target
-    const userName = f.userName.value
-    const age = f.age.value
-    const favoriteColor = f.favoriteColor.value
+function renderColor(){
+    const favoriteColor = form.favoriteColor.value
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    
+    return colorDiv
+    
+}
 
+function renderListItem(list){
+    const userName = form.userName.value
+    const age = form.age.value
 
     const nameItem = document.createElement('li')
     nameItem.textContent = `Name: ${userName}`
@@ -18,30 +24,38 @@ const handleSubmit = function(ev){
     const colorItem = document.createElement('li')
     colorItem.textContent = 'Favorite Color: '
 
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = favoriteColor
-    colorDiv.style.width = '6rem'
-    colorDiv.style.height = '3rem'
-    colorItem.appendChild(colorDiv)
-
-    const list = document.createElement('ul')
     list.appendChild(nameItem)
     list.appendChild(ageItem)
+    colorItem.appendChild(renderColor())
     list.appendChild(colorItem)
 
     users.appendChild(list)
 
-
-    f.reset()
-    f.userName.focus()
 }
+
+function renderList() {
+    const list = document.createElement('ul')
+    renderListItem(list)
+}
+
+const handleSubmit = function(ev){
+    ev.preventDefault()
+
+    const userName = form.userName.value
+    const age = form.age.value
+    const favoriteColor = form.favoriteColor.value
+    const users = document.querySelector('#users')
+    //const f = ev.target
+    
+    renderList()
+
+    //const list = document.createElement('ul')
+
+    form.reset()
+    form.userName.focus()
+}
+
 form.addEventListener('submit', handleSubmit )
-
-function renderColor(){
-    const renderDiv = document.createElement('div')
-
-    colorItem.appendChild(renderDiv)
-}
 
 
 
